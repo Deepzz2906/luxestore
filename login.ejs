@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Login - LuxeStore Ultra</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="form-page">
+  <div class="form-box">
+    <h1>User Login</h1>
+    <% if(msg) { %><p class="message error"><%= msg %></p><% } %>
+    <form method="POST">
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button class="btn" type="submit">Login</button>
+    </form>
+    <p class="center">New user? <a href="/register">Register</a></p>
+  </div>
+</body>
+</html>

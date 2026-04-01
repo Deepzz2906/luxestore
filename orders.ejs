@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orders - LuxeStore Ultra</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">LuxeStore <span>Ultra</span></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/products">Shop</a>
+    <a href="/cart">Cart</a>
+    <a href="/wishlist">Wishlist</a>
+    <a href="/logout">Logout</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h2><%= title %></h2>
+  <div class="table-box">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>User</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Date</th>
+      </tr>
+      <% orders.forEach(order => { %>
+      <tr>
+        <td><%= order._id %></td>
+        <td><%= order.userEmail %></td>
+        <td><%= order.productName %></td>
+        <td>₹<%= order.price %></td>
+        <td><%= new Date(order.createdAt).toLocaleString() %></td>
+      </tr>
+      <% }) %>
+    </table>
+  </div>
+</section>
+</body>
+</html>

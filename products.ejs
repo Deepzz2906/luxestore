@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products - LuxeStore Ultra</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">LuxeStore <span>Ultra</span></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/products">Shop</a>
+    <a href="/cart">Cart</a>
+    <a href="/wishlist">Wishlist</a>
+    <a href="/orders">Orders</a>
+    <% if(user) { %>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/login">User Login</a>
+    <% } %>
+    <a href="/seller-login">Seller Login</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h2 class="page-title">Explore Collection</h2>
+  <div class="product-grid">
+    <% products.forEach(product => { %>
+      <div class="product-card">
+        <img src="<%= product.image %>" alt="<%= product.name %>">
+        <h3><%= product.name %></h3>
+        <p><%= product.description %></p>
+        <div class="price">₹<%= product.price %></div>
+        <a href="/product/<%= product._id %>" class="btn">View Product</a>
+      </div>
+    <% }) %>
+  </div>
+</section>
+</body>
+</html>

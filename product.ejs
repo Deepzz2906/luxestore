@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= product.name %> - LuxeStore Ultra</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">LuxeStore <span>Ultra</span></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/products">Shop</a>
+    <a href="/cart">Cart</a>
+    <a href="/wishlist">Wishlist</a>
+  </nav>
+</header>
+
+<section class="section">
+  <div class="product-detail-card">
+    <img src="<%= product.image %>" alt="<%= product.name %>">
+    <div>
+      <h1><%= product.name %></h1>
+      <div class="price">₹<%= product.price %></div>
+      <p><%= product.description %></p>
+      <p><strong>Category:</strong> <%= product.category %></p>
+
+      <form action="/add-to-cart/<%= product._id %>" method="POST" style="display:inline;">
+        <button class="btn">Add to Cart</button>
+      </form>
+
+      <form action="/add-to-wishlist/<%= product._id %>" method="POST" style="display:inline;">
+        <button class="btn secondary">Add to Wishlist</button>
+      </form>
+    </div>
+  </div>
+</section>
+</body>
+</html>

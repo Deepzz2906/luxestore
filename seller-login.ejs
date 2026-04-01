@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Login - LuxeStore Premium</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="form-page">
+
+  <div class="form-box">
+    <h1>Seller Login</h1>
+    <p class="subtitle">Login to manage products and orders</p>
+
+    <% if (msg && msg.trim() !== "") { %>
+      <p class="message error"><%= msg %></p>
+    <% } %>
+
+    <form action="/seller-login" method="POST">
+      <input type="email" name="email" placeholder="Seller Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button class="btn" type="submit">Login</button>
+    </form>
+
+    <div class="form-links">
+      <a href="/">⬅ Back to Home</a>
+      <a href="/login">User Login</a>
+    </div>
+
+    <div class="seller-demo-box">
+      <p><strong>Demo Seller Login</strong></p>
+      <p>Email: seller@luxestore.com</p>
+      <p>Password: 12345</p>
+    </div>
+  </div>
+
+</body>
+</html>

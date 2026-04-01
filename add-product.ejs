@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Product - LuxeStore Ultra</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="form-page">
+  <div class="form-box">
+    <h1>Add New Product</h1>
+    <% if(msg) { %><p class="message"><%= msg %></p><% } %>
+    <form method="POST">
+      <input type="text" name="name" placeholder="Product Name" required>
+      <input type="number" name="price" placeholder="Price" required>
+      <input type="text" name="image" placeholder="Image URL" required>
+      <input type="text" name="category" placeholder="Category" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <button class="btn" type="submit">Add Product</button>
+    </form>
+  </div>
+</body>
+</html>

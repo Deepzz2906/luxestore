@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart - LuxeStore Ultra</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">LuxeStore <span>Ultra</span></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/products">Shop</a>
+    <a href="/cart">Cart</a>
+    <a href="/wishlist">Wishlist</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h2>Your Cart</h2>
+
+  <% if(cart.length > 0) { %>
+    <% cart.forEach((item, index) => { %>
+      <div class="cart-item">
+        <h3><%= item.name %></h3>
+        <p>₹<%= item.price %></p>
+        <a href="/remove-cart/<%= index %>" class="btn">Remove</a>
+      </div>
+    <% }) %>
+
+    <h2>Total: ₹<%= total %></h2>
+    <a href="/checkout" class="btn">Proceed to Checkout</a>
+  <% } else { %>
+    <p class="center">Your cart is empty.</p>
+  <% } %>
+</section>
+</body>
+</html>
